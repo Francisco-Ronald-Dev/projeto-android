@@ -1,0 +1,316 @@
+@charset "utf-8"; /* Aqui nos estamos usando o (@) para adicionarmos a Regra (charset "utf-8";) */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yuji+Mai&display=swap'); /* Aqui nos estamos importando uma Fonte direto do Google Fonts.*/
+
+@font-face { /* Aqui nos estamos Importando uma Fonte que está Instalada na nossa Maquina.*/
+    font-family: 'Android';
+    src: url("../fontes/idroid.otf") format("opentype");
+    font-weight: normal;
+}
+
+/* Escolha da Palheta de Cores Monocromatica 
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+:root{
+    /* Aqui nos criamos o Seletor (":root{}") este Seletor na Verdade é a "Raiz da Árvore do nosso Documento" tudo que colocarmos nele servirá para o Documento Inteiro.*/
+
+    /* Nos vamos agora Criar algumas Variaveis em Css para facilitar o nosso trabalho, vale resltar que para fazer isso com eficiência é de Extrema Necessidade usarmos o Seletor (":root{}") para isso, para declararmos uma Variavel em Css nos Primeiramente usamos os Dois Seguintes Caracteres : "--" e em seguida o Nome e valor desta Variavel, vamos criar Variaveis para Armazenarmos a nossa Palheta de Cores, veja:*/
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrão: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Bebas Neue', 'cursive';
+    --font-android: 'Android', 'cursive';
+
+}
+
+/* Se você usar o seu Navegador para Inspencionar a sua Página você verá que algumas Configurações como a Margen das (Box Model) são Globais e isto pode acabar impedindo do Conteúdo "tocar/Chegar" as Bordas da Pádina Web, agora nos vamos remover as Margin de todas as Nossas Tags.*/
+
+/* Para Fazermos isso nos vamos criar um Seletor de Asteristo (*), este é um Seletor Global e vale para todas as Tags, o que fizermos nele acontecerá em todas as Tags.*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    /* Para usarmos as Variaveis que criamos neste Arquivo Css basta usar a Função (Var()) e Chamar nos Parâmetros a Nossa Vriavel, e por final basta usar o Caractere (";").*/
+    background-color: var(--cor0);/* Desta Forma.*/
+    font-family: var(--fonte-padrão);
+
+}
+
+/* Nos vamos fazer uma modificação nos links semelhante ao que existe na Weekpedia, nos vamos adicionra um Emoji de correntes depois de todo link externo mas para isso nos vamoos ter que ir no nosso Arquivo (HTML) e vamos criar a Classe ("externo").
+
+Agora nos vamos criar o Seletor que fara isso, veja:*/
+
+/* Aqui nos usamos os Dois Pontos duaas vezes (::) porque estamos trabalhando com um Evento, e o Evento que queremos é o (after) que nos ajudará a criarmos as Modificações Depois dos Links.*/
+a.externo::after{
+    content: '\00A0\1F517'; /* Aqui nos usamos a Tag (content:;) e passamos os Valores dos Emojis que usamos, no nosso caso foi ('\00A0\1F517')
+
+    o '\1F517' - É o Emoji das Correntes,
+    o '\00A0' - É um espaço em branco para distanciar o Emoji das Correntes do Link, apenas isso.*/
+
+}
+
+header{
+    /*background-color: var(--cor4);*/
+
+    background-image: linear-gradient(to bottom , var(--cor3), var(--cor5)); /* Aqui nos vamos criar um Gradiante ou Degrade no nosso
+    (header) qu eé o nosso "Cabeçalho", para fazer isto basta tirar a Tag (backgroundcolor:;) qu etinhamos anteriormente e inseririmos a Tag (background-image) e escolhermos o Tipo de Degrade que queremos que no caso foi o (linear-gradient()) e como Parâmetro nos devemos passar as Seguintes informaçoes :
+    A Direção (to bottom) -> "Para Baixo"
+    A primeira Cor (var(--cor3)) para a
+    Segunda Cor (var(--cor5)).
+    
+    Obs : Por algum Motivo quando formos criar uma Gradiante ou Degrade nos vamos precisar separar os Parâmetros por (,)*/
+
+    /* Até o Momendo a Nossa Tag (header) ou como gostamos de chamar, o nosso "Cabeçalho" está muito expremido e pequeno, nos queremos aumentar a sua Altura, que em Inglês é "Height", para que possamos aumentar a Altura do nosso "Cabeçalho" nos vamos ter que aumentar a sua altura minima, veja:*/
+    min-height: 150px;
+
+    /* Agora nos vamos centralizar a nossa Tag (header), vamos centralizar o nosso "Cabeçalho", para isso usaremos a seguinte linha de codigo, vejá:*/
+    text-align: center; /* Obs : Para centralizarmos Textos nos devemos usar a Tag (text-align : center;)*/
+
+    /* Agora nos vamos usar a Tag (padding-top: 40px;) para criarmos um Padding no Topo do nosso (header), isso fará com que o nosso (header) "se afaste um pouco do topo", vejá:*/
+    padding-top: 40px;
+}
+
+header > h1{ /* Para todos os (h1) dentro do (header) estas serão as configurações deles:*/
+    color: white;
+    font-family: var(--font-destaque);
+
+    font-size: 3em;
+
+    /* A Tag (h1) e (h2) por padrão ja veem em Negrito nos vamos remover este Negrito apenas deixando o (font-weight: normal;) exatamente assim, nos usaremos o ("normal") na Tag (font-weight), veja: */
+    font-weight: normal;
+
+    /* Aqui nos vamos Criar um (margin-bottom: 20px;) para separarmos um ouco o (h1) do (p).*/
+    margin-bottom: 20px;
+
+    text-shadow: 2px 2px 0px black; /* Sombra noo Texto. Ordem Parâmetros : Deslocamento Horizontal, Deslocamento Vertical, Espalhamento e Cor da Sombra.*/
+}
+
+header > p{/* Pata todos os (p) dentro de (header) estas serão as configurações deles:*/
+    color: white;
+    /* Aqui nos vamos usar o (font-family:;) para definirmos uma Fonte para este (p)*/
+    font-family:var(--fonte-padrão) ;
+    font-size: 1.2em; /* Aqui nos estamos definindo o Tamanho da Fonte e para isso nos usamos a Medida "em".*/
+
+    /* Agora nos vamos definir uma Largura Máxima para está Fonte, temos que ficar atentos póis quando mechemos com Larguras pode ser que o nosso "objeto" deixe de ser uma "Caixa" e se isso acontecer é necessario algums ajustes para centralizarmos ele automaticamente.*/
+    max-width: 600px; /* Com está Linha de codigo estamos informando que está Fonte pode ir ou ter até 600 px de Largura o que garante que em Viewports de Computadores ou Televizões este (p) fique bem centralizado mas em Viewports menores como celulares este (p) pode começar a Vazar, e para resolver este Problema nos vamos ter que centraliza-lo automaticamente, basta usarmos a Tag (margin: auto;).*/
+    margin: auto;
+
+    /* Certo, agora que a Fonte está Centralizada nos podemos Adicionar um (padding-right) e um (padding-left) para criar espaõs nas duas bordas horizontais e assim o Texto (p) ficará ainda mais centralizado.*/
+    padding-right: 10px;
+    padding-left: 10px;
+
+    margin-bottom: 30px;
+
+
+    text-shadow: 2px 2px 0px black; /* Sombra no Texto. Ordem Parâmetros : Deslocamento Horizontal, Deslocamento Vertical, Espalhamento e Cor da Sombra.*/
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px; /* Aqui nos estamos criando um (Padding : 10px;) para a nossa Tag (nav) isso faá com que a Tag (nav) aparente ser mais "Cheinha".*/
+
+    box-shadow: 0px 7px 7px black; /* Sombra. Ordem Parâmetros : Deslocamento Horizontal, Deslocamento Vertical, Espalhamento e Cor da Sombra.*/
+}
+
+/* Agora nos vamos querer personalizar os Links que estão dentro da Tag (nav) então para resolver este Problema nos vamos criar o Seguinte Seletor :*/
+nav > a{ /* Aqui nos Criamos este Seletor para ser o Seletor dos Links (a) da área de Navegação (nav).*/
+    color: var(--cor1); /* Cor do Link.*/
+    padding: 10px; /* Aumentando o Espaçamento da (Box-model) dos Links.*/
+    border-radius: 5px; /* Criando a Borda.*/
+    text-decoration: none; /* aqui é para ocultar o Evento de quando o Link está azul ou azul escuro pq já visitamos o Link antes.*/
+    font-weight: bold; /* Deixando a Fonte em Negrito.*/
+
+    transition-duration: 0.5s; /* Aqui nos usamos a Tag (transition-duration) que serve para quando passarmos o Mouse sobre os Links a Transição irá demorar (0.5s) segundos para acabar, Debugue o Codigo e vejá com seus proprios olhos.*/
+
+
+}
+
+/* Agora nos Vamos criar um Evento para os Links da nossa Navegação, Sempre que nos passarmos o Mouse por cima deles queremos que algu aconteça e no nosso Caso nos vamos mudar as Cores deles, veja:*/
+
+nav > a:hover{
+    background-color: var(--cor3); /* Mudando a Cor de Fundo do (box-model).*/
+    color: var(--cor5); /* Mudando a Cor do Texto.*/
+}
+
+main{
+    /* Agora nos vamos adicionar Responsividade ao nosso Site.*/
+    min-width: 300px; /* Todo os Textos teram uma Largura minima de 300px */
+    max-width: 1000px; /* Todos os Textos teram uma Largura Maxima de 1000px.*/
+    /* Desta forma nos já conseguimos adicionar Responsividade aos Textos do nosso Site, sempre que a Viewport diminuir ou aumentar de tamanho os Textos do Site vão se adaptar a isso.*/
+    margin: auto; /* Aqui nos estamos colocando (margin: auto;) para centralizar todo o conteúdo do Site, incluindo o Texto já responsivo.*/
+    background-color: white;
+
+    /* Para evitar que o Conteúdo da Página fique muito colada com o Roda-pé (onde tem os Creditos dos Criadores) da Página eu vou Criar uma (margin-bottom) que vai solucionar este Problema.*/
+    margin-bottom: 30px; /* A Tag (margin-bottom: 30px;) vai criar uma Margin de 30 px entre o Inferior da Página e o Roda-pé da Página que contem os Creditos dos Criadores da Página, evitando assim o Contato do Conteúdo no Final da Página com o Conteúdo do Roda-pé da Página.*/
+
+    /* O Seletor (main) em que estamos contem TODO o Conteúdo da nossa Página e agora nos vamos adicionar um (padding) a este Seletor para que o conteúdo da Página fique um pouco mais distante das Bordas da Página, veja:*/
+    padding: 20px;
+
+    /* Agora vamos adicionar uma Sombra ao Conteúdo da nossa Página.*/
+    box-shadow: 0px 0px 20px black; /* Lembrando que os Parâmetros da Tag (box-shadow) são primeiramente o Deslocamento Lateral, Deslocamento Vertical, Espalhamento e a Cor da Sombra.*/
+
+    /* Agora eu quero criar Bordas apenas nas duas Extremidades de Baixo da nossa Página, eu vou fazer isso para que possamos aprender um Pouco mais sobre a Tag (border-radius), veja:*/
+
+    border-bottom-left-radius: 10px ; /* A Tag (border-bottom-left-radius: 10 ;) vai criar uma borda de 10px apenas na Extremidade Inferior Esquerda da nossa Página.*/
+    border-bottom-right-radius: 10px ; /* A Tag (border-bottom-right-radius: 10 ;) vai criar uma borda de 10px apenas na Extremidade Inferior Direita da nossa Página.*/
+}
+
+main img{ /* Aqui nos estamos criando o Seletor (main img{}) que vai servir para todas as Tags (img) dentro da Tag (main), todas as Configurações que fizermos aqui seram aplicadas para as Tags (img) dentro de (main). */
+    width: 100%; /* Aqui nos estamos dizendo que a Imagen terá uma Largura de 100%, isso fará com que essas Imagens se adaptem a Largura da Viewport e fiquem, "Responsivas" mas da para melhorar ainda mais isso. */
+}
+
+main img.pequena{
+    /*width: 50%; Antes nos aviamos feito desta maneira mas definir o Tamanho de uma Imagem desta Maneira usando Porcentagem é extremamente inadequado, póis em telas grandes a Imagem fica Muito grande e em telas pequenas a Imagem fica muito pequena, a maneira mais adequada de corrigirmos este Problema é definirmos um Tamanho Maximo para a Largura ("width") da imagem, portanto, veja:*/ 
+
+    max-width: 350px; /* Desta forma o Tamanho Maximo de Largura ("Width") da Imagem será de 350px*/
+
+    /* Para centralizarmos esta Imagem na Tela é alo bem contraditorio, póis como a Imagem não é um "Bloco" ou (box-model) nos temos que usar O "Parâmetro/Valor(es)" (displai : block;), veja :*/
+    display: block;
+    /* Agora que nos "Transformamos esta Imagem em um "Bloco" ou atribuimos a ela um (Box-Model) no temos que usar o "Parâmetro/Valor(es)" (margin : auto;), veja:*/
+    margin: auto; /* Pronto agora está Imagen está um Pouco mais "Responsiva" -> Respondendo corretamente ao Tamanho da Viewport, e está Centralizando corretamente na Tela.*/
+}
+
+main h1{ /* Para todos os (h1) dentro de (main) estas serão as suas Configurações:*/
+    color: var(--cor5);
+    font-family: var(--font-android);
+
+    /* A Tag (h1) e (h2) por padrão ja veem em Negrito nos vamos remover este Negrito apenas deixando o (font-weight: normal;) exatamente assim, nos usaremos o ("normal") na Tag (font-weight), veja: */
+    font-weight: normal;
+
+    font-size: 1.8em;
+}
+
+main h2{ /* Para todos os (h2) dentro de (main) estas serão as suas Configurações.*/
+    font-family: var(--font-destaque);
+    color: var(--cor4);
+    font-size: 1.3em;
+
+    /* A Tag (h1) e (h2) por padrão ja veem em Negrito nos vamos remover este Negrito apenas deixando o (font-weight: normal;) exatamente assim, nos usaremos o ("normal") na Tag (font-weight), veja: */
+    font-weight: normal;
+
+    background-image: linear-gradient(to right, var(--cor1), transparent); /* Aqui nos criamos esse Gradiant no (h2) que inicia na cor (--var1) e finaliza transparent.*/
+
+    /* Certo, agora nos vamos adicionar também um "Recuoo" ou um "Espaçamento" no Inicio dos Parágrafos para fazer com que eles sejam mais caracteristicos, para fazer isso nos devemos usar a Tag (text-indent: 8px;), isso criará um "Recuoo" de 30px o que já é muito mais agradavel.*/
+    text-indent: 8px;
+}
+
+
+main p{ /* Configurações das Tags (p) dentro da Tag (main).*/
+    margin: 15px 0px; /* Criando um Espaçamento.*/ /* Isto é a mesma coisa que fazer isso (margin: 15px 0px 15px 0px;).*/
+
+    text-align: justify; /* Quando udamos (text-align: justify;) nos corrigimos o Texto e deixamos ele Alinhado nos dois lados do Parágrafo.*/
+    
+    /* Certo, agora nos vamos adicionar também um "Recuoo" ou um "Espaçamento" no Inicio dos Parágrafos para fazer com que eles sejam mais caracteristicos, para fazer isso nos devemos usar a Tag (text-indent: 30px;), isso criará um "Recuoo" de 30px o que já é muito mais agradavel.*/
+    text-indent: 30px;
+
+    font-size: 1em; /* A Tag (font-size:;) define o Tamanho da Fonte.*/
+
+    /* Agora nos vamos auterar o Espaçamento entre linhas para que isso fique algu mais visivelmente agradavel, para fazermos isso nos usamos a Tag (line-height:;), vejá:.*/
+    line-height: 2em;/* ("em") é uma médida nativa muito útil de ser utilizada, é a melhor junto com o ("px").*/
+
+}
+
+main strong{ /* O Interessante deste Seletor das Tags (Strong) é que servem para todas as Tags (Strong) dentro de (main).*/
+    color: var(--cor4); /* Cor do Texto.*/
+    font-weight: bold; /* Negrito.*/
+}
+
+main a{ /* O Interessante deste Seletor das Tags (a) é que servem para todas as Tags (a) dentro de (main).*/
+    text-decoration: none; /* Oculta umas Caracteristicas dos Links.*/
+    font-weight: bold; /* Negrito.*/
+    color: var(--cor5); /* Cor do Texto.*/
+    background-color: var(--cor1); /* Cor do Fundo.*/
+    padding: 2px 6px; /* Espaçamento.*/
+}
+
+main a:hover{
+    text-decoration: underline; /* Aqui nos Decoramos com um Underline.*/
+    color: var(--cor4); /* Aqui nos mudamos a Cor do Texto.*/
+}
+
+/* Agora nos vamos criar um Seletor que será o Responsavel por conter e Aplicar as Seguintes configurações na nossa Tag (Div) que contem a Classe ("vidio"). */
+div.vidio{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px; /* Nos estamos passando valores negativos para ocupar um espaço na Página, isso faz com que a (Box-Model) dos nossos Vídio ocupe os espaços até a fronteiras Laterais da Página.*/
+    padding: 20px;
+    /* Obs : (margin) é espaço pro lado de fora e (padding) é espaço pro lado de dentro.*/
+
+    padding-bottom: 55%;/* Aqui nos estamos Criando um Espaçamento para baixo de 50%, nos fizemos isso usando o (padding-bottom).*/
+
+    position: relative; /* Aqui nos estamos usando a Tag (position: relative;), nos fizemos isso para termos acesso a Outras Tags e Propriedades, quando fizemos isso praticamente a Posição do "Objeto" por padrão permanece a mesma coisa até que nos Modifiquemos as Novas Tag'/Propriedades que Obtemos, sendo ela (top, left, right, height).*/
+}
+
+/* Para que nos possamos ter um Melhor controle sobre as Configurações do Vídio que nos Importamos do Yt nos teremos que criar o Seguinte Seletor:*/
+div.vidio > iframe{
+    position: absolute; /*A propriedade position: absolute; no CSS é usada para posicionar um elemento em relação ao seu contêiner de posicionamento mais próximo (que tenha uma propriedade de position definida como relative, absolute, ou fixed). Se nenhum contêiner com posicionamento estiver definido, o elemento será posicionado em relação ao elemento raiz do documento (geralmente o <html>).*/
+
+    top: 5%; /* A Tag/Propriedade (top) é o espaçamento em Pixels da (Box-Model) para a parte Supriori de outra (Box-Model).*/
+    left: 5%; /* A Mesma coisa se aplica a Esta Tag/Propriedade (left).*/
+    width: 90%; /* A Tag/Propriedade (wight) é a Largura da nossa (Box-Model) mas este Valor é Refêrente a outra (Box-Model).*/
+    height: 90%; /* A Mesma coisa se aplica a Esta Tag/Propriedade (height).*
+}
+
+aside{
+    background-color: var(--cor1); /* Atribuindo cor de Fundo.*/
+    padding: 10px; /* Adicionando Espaçamento.*/
+    border-radius: 10px; /* Adicionando Bordas de 10px.*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.375);
+}
+
+aside > h3{ /* Aqui nos vamos configurar o nosso (h3) para que ele fique de um jeito mais armonico e complemente mais o nosso (aside) na Página, nos queremos que este (h3) ocupe todo o Espaço superior da Tag (aside).*/
+    background-color:var(--cor4);
+    color: white;
+
+    /* As Três linhas de codigo abaixo fazem com que o nosso (h3) ocupe todo o espaço Superior da Tag (aside), recomendo que veja detalhadamente estas Três linhas de codigo separadamente.*/
+    padding: 10px; /* adicionando espaçamento.*/
+    margin: -10px -10px 0px -10px; 
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul{
+    list-style-type: '\2714\00A0\00A0' ; /* Aqui nos estamos usando a Tag (list-style-type:;) por que vamos usar algums Emojis do Site (https://emojipedia.org), nos usamos os codigos dos emojis e vou explicar o que são estes codigos usados aqui,
+
+    Obs : Quando for colocar os Codigos dos Emojis, lembre´se de que eles devem estar dentro de Aspas ('') ou ("").
+
+    "\2714"- é o Emoje de Verificado.
+    "\00A0" - É Um espaço em branco que usamos para "distanciar" um pouquinho o emoji da lista.*/
+
+    list-style-position: inside; /* A Tag (list-style-position:;) serve para Posicionar Marcadores como bolinhas e esta Tag/Propriedade normalmente é usado em conjunto com Tag's como (ul) ou (ol), aqui nos usamos (list-style-position: inside;) que posiciona os Marcadores do Lado de dentro da (box-model), o padrão é ("outside") que posiciona os Marcadores do Lado de fora da (box-model).*/
+    columns: 2; /* Aqui nos estamos usando a Tag (columns:2;) isso faz com que nos possamos dividir esta lista em duas colunas.*/
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+/* Agora nos vamos configurar os Links do nosso "Roda-pé" que é onde estão os Creditos do Site.*/
+footer a{
+    color: white; /* Aqui estamos atribuindo uma cor.*/
+    text-decoration: none; /* Aqui estamos Ocultando as Propriedades dos Links, ex : ficar azul ou roxo se já tiver sido visitado pelo úsuario.*/
+    font-weight: bolder; /* Aqui estamos deixando o texto em Negrito.*/
+    
+}
+
+/* Agora nos vamos configurar um Evento dos Links do nosso "Roda-pe", o Evento que vamos configurar é o (hover) que siguinifica que passamos o Mouse por cima do Link.*/
+
+footer a:hover{
+    color: var(--cor1); /* Aqui estamos Atribuindo uma Cor ao nosso Link que ira aparecer quando passarmos o Mouse por cima do Link.*/
+    text-decoration: underline; /* Aqui estamos atribuindo a Decoração "Underline" ao nosso Link que ficara visivel quando passarmos o Mouse por cima do Link.*/
+}

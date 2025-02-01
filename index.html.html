@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como surgiu o mascote do Android</title>
+    <link rel="shortcut icon" href="C:\Users\Ronald\OneDrive\Documentos\Estudos\Desafios Html & Css\Desafio 010\pacote-projeto-d010\imagens\favicon.ico" type="image/x-icon">
+    <!-- Obs : Para definir o Favicon com mais Facilidade podemos usar o Atalho (Ctrl + Space) com este Atalho nos podemos navegar entre as Pastas.-->
+    <link rel="stylesheet" href="pacote-projeto-d010/estilo/style.css">
+    <!-- Obs : Em relação ao Caminho dos Arquivos, existem Caminho Convencional e o Caminho Relativo, basta clicar com o Botão Direito do Mouse sobre um Arquivo aqui no VS Code e você vera isso.-->
+
+</head>
+<body>
+    <header> <!-- A Tag (header) que usamos aqui é usada para definir o Cabeçalho do nosso Site.-->
+        <h1>Curiosidades de Tecnologia</h1> <!-- Título-->
+        <p>Tudo aquilo que você sempre quis saber do Mundo Tech em um único lugar.</p>
+
+    </header>
+
+    <nav> <!-- A Tag (nav) é usada para separar na Página os Documentos de Navegação, como Links por exemplo.-->
+        <a href="#">Home</a>
+        <a href="#">Notícias</a>
+        <a href="#">Curiosidades</a>
+        <a href="#">Fale Conosco</a>
+
+    </nav>
+
+    <main> <!-- A Tag (main) é usada para englobar o Conteúdo Principal da Página.-->
+        <article> <!-- A Tag (Article) é usada para representar um Conteúdo independente e autocontido, como : artigos de Blog, Notícias, Postagens em Redes Sociais, Entradas em Fóruns ou Comentários.-->
+
+            <h1>História do Mascote do Android</h1> <!-- Aqui nos usamos a Tag (h1) porque este Conteúdo é um Título.-->
+
+            <p>Provavelmente você sabe que o sistema operacional <strong>Android</strong>, mantido pelo <strong>Google</strong> é um dos mais utilizados para dispositivos móveis em todo o mundo. Mas tavez você não saiba que o seu simpático mascote tem um nome e uma história muito curiosa? Pois acompanhe esse artigo para aprender muita coisa sobre esse robozinho.</p>
+            <!-- No Paragráfo a cima nos usamos a Tag (Strong) que serve para dar Destaque a alguma palavra, esta Tag básicamente deixa a Palavra em Negrito.-->
+
+            <h2>A primeira versão</h2> <!-- Aqui nos usamos a Tag (h2) porque este Conteúdo é um "Sub Paragrafo".-->
+
+            <p>A primeira tentativa de criar um mascote surgiu em 2007 e veio de um desenvolvedor chamado <a href="https://androidcommunity.com/dan-morrill-shows-us-the-android-mascot-that-almost-was-20130103/" target="_blank" class="externo">Dan Morrill</a>. Ele conta que abriu o <a href="https://inkscape.org/pt-br/" target="_blank" class="externo">Inkscape</a> (software livre para vetorização de imagens) e criou sua própria versão de robô. O objetivo era apenas personificar o sistema apenas para a a sua equipe, não existia nenhuma solicitação da empresa para a criação de um mascote.</p>
+
+            <picture> <!-- Aqui nos usamos a Tag (picture) para definirmos um "Comportamento" para esta Imagem. -->
+                <source media="(max-width : 670px)" srcset="pacote-projeto-d010/imagens/dan-droids-pq.png"> <!-- Aqui nos usamos a Tag (source) para definirmos de fato o comportamento da nossa  Imagen no Parâmetro (media), nos passamos um Valor maximo de 670px de Width ("Largura"), ou seja, enquanto o Valor da Largura da Viewport for menor que 800px a Imagem exibida será a Imagem pequena.-->
+                <img src="pacote-projeto-d010/imagens/dan-droids.png" alt="Primeiro Mascote do Android"> <!-- Aqui nos usamos a Tag (img) para colocarmos uma imagem no nosso Site.-->
+
+                <!-- OBS: Tudo que for imagem nos podemos Envelopar (warp) com a Tag (picture) para definirmos algums comportamentos com a Tag (source), estamos levando em Consideração o Width ("Largura") da Viewport para definirmos estes Comportamentos.-->
+            </picture>
+
+            <p>Essa primeira versão bizarra até foi batizada em homenagem ao seu criador: seriam os <strong>Dandroids</strong>.</p>
+
+            <h2>Surge um novo mascote</h2> <!-- Aqui nos usamos a Tag (h2) porque este Conteúdo é um "Sub Paragrafo".-->
+
+            <p>A ideia de ter um mascote foi amadurecendo e a missão foi passada para uma profissional da área. A ilustradora Russa <a href="https://www.irinablok.com" target="_blank" class="externo">Irina Blok</a>, também funcionária do Google, ficou com a missão de representar o pequeno robô de uma maneira mais agradável.</p>
+
+            <picture>
+                <source media="(max-width: 670px)" srcset="pacote-projeto-d010/imagens/irina-blok-pq.jpg">
+                <!-- Vale ressaltar que quando usarmos a Tag (source) e o Parâmetro (media) nos devemos usar estes Carcacteres também : ("()").-->
+                <img src="pacote-projeto-d010/imagens/irina-blok.jpg" alt="Criadora do Dandoid">
+            </picture>
+
+            <p>A ideia principal da Irina era representar tudo graficamente com poucos traços e de forma mais chapada. O desenho também deveria gerar identificação rápida com quem o olha. Surgiu então o <strong>Bugdroid</strong>, o novo mascote do Android.</p>
+
+            <img src="pacote-projeto-d010/imagens/bugdroid.png" alt="Bugdroid" class="pequena"> <!-- Como nos não temos uma Imagem Menor dos Bugdroids nos vamos ter que criar uma Classe para eles, o Parâmetro que usamos para fazer isso foi o Parâmetro (class = "pequeno"), o Nome desta Classe é "pequeno", agora nos Vamos criar um Seletor para está Classe no CSS e vamos diminuir seu Tamanho por lá.-->
+
+            <p>A principal inspiração para os traços do novo <strong>Bugdroid</strong> veio daqueles bonequinhos que ilustram portas de banheiro para indicar o gênero de cada porta. Conta a lenda que a artista estava criando em sua mesa no escritório do <strong>Google</strong> e olhou para o lado dos banheiros e a identificação foi imediata: simples, limpo, objetivo.</p>
+
+            <!-- Para tornarmos um Vídio mais Responsivo com os Dispositivos como Notebooks, Tv's e Celulares nos vamos precisar envelopar (Ctrl+Shift+P) o Vídio na Tag (div) e como nos podemos ter varios Vídios é recomendado que criamosuma Class para os Vídios, vejá, a Classe que vamos criar aqui será a Class ("vidio")-->
+            <!-- A Tag (iframe) que usamos aqui serve para colocarmos um Vidío em nosso Site.-->
+            <div class="vidio">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/l2UDgpLz20M?si=YiAQloTiq4y1f21Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            
+            <aside> <!-- A Tag (aside) é usada para definir um Conteúdo que está relacionado com o Conteúdo Principal da Página mas que não faz parte exatamente dele, é como se fosse apenas uma Adição interessante de Informação e essas Informações podem ser (Links Relacionados, Barras Laterais, Anúncios ou Notas Adicionais).-->
+
+                <h3>Quer aprender mais?</h3> <!-- Aqui nos usamos a Tag (h3) que é um Título abaixo do (h2).-->
+
+                <p>Outro assunto curioso em relação ao Android é que cada versão sempre foi nomeada em homenagem a um doce, em ordem alfabética a partir da versão 1.5 até a 9.0.</p>
+
+                <ul> <!-- Aqui nos usamos a Tag (ul) que defini uma lista.-->
+                    <li>1.5 - <abbr title="Bolo de Copo">Cupcake</abbr></li> <!-- Aqui nos usamos a Tag (li) que defini o Item de uma Lista.-->
+                    <!-- Nos também usamos a Tag (abbr) que serve para criarmos Abreviações que serão exibidas na Viewport quando nos Passarmos o Mouse por cima do Conteúdo.-->
+
+                    <li>1.6 - <abbr title="Rosquinha">Donut</abbr></li>
+                    <li>3.0 - <abbr title="Bomba">Eclair</abbr></li>
+                    <li>2.2 - <abbr title="Iogurte Congelado">Froyo</abbr></li>
+                    <li>2.3 - <abbr title="Biscoito de Gengibre">Gingerbread</abbr></li>
+                    <li>3.0 - <abbr title="Favo de Mel">Honeycomb</abbr></li>
+                    <li>4.0 - <abbr title="Sanduíche de Sorvete">Ice Cream Sandwich</abbr></li>
+                    <li>4.1 - <abbr title="Jujuba">Jelly Bean</abbr></li>
+                    <li>4.4 - <abbr title="KitKat">KitKat</abbr></li>
+                    <li>5.0 - <abbr title="Pirulito">Lolipop</abbr></li>
+                    <li>6.0 - <abbr title="Mar">Marshmallow</abbr></li>
+                    <li>7.0 - <abbr title="Torrone">Nougat</abbr></li>
+                    <li>8.0 - <abbr title="Oreo">Oreo</abbr></li>
+                    <li>9.0 - <abbr title="Torta">Pie</abbr></li>
+                </ul>
+
+                <p>Infelizmente, o <strong>Android Q</strong> não existiu, pois o Google resolveu pôr fim a essa divertida prática e começou a usar numerações, o que deu origem ao Android 10.</p>
+
+                <p>Acesse aqui o site <a href="https://www.android.com/intl/en_uk/history/#/donut" target="_blank" class="externo">Android History</a> para conhecer a sequência das versões "adocicadas" e o que cada uma trouxe para o sistema Android.</p>
+            </aside>
+            
+
+            <p>Então é isso! Espero que você tenha gostado do nosso artigo com essa curiosidade sobre o sistema <strong>Android</strong> e seu simpático mascote.</p>
+
+
+        </article>
+
+    </main>
+
+    <footer> <!-- A Tag (footer) é projetada para conter informações Conplementares ou de Encerramento relacionadas ao Conteúdo ao qual está associada, normalmente é usado como "Roda Pé" de um Site, que é exatamante como estamos fazendo aqui-->
+        Site Criado por <a href="https://www.instagram.com/ronaldx_insta/" target="_blank">Ronald</a> com Auxilio do <a href="https://www.youtube.com/c/CursoemVídeo" target="_blank">Curso em Vídio</a>.
+
+    </footer>
+
+    <!-- Obs : Quando formos aplicar (Responsividade) no nosso site que nada mais é do que ele se adaptar a todos os Dispositivos como : Celulares, Tablets, Notebooks e Computadores. Quando estivermos fazendo isso temos que ter em mente que o que mais é levado em consideração para isso é a Largura da Tela, para telas muito pequenas usaremos uma Largura minima de 320px que é a quantidade de Pixels de Largura de algums celulares muito antigos.-->
+</body>
+</html>
