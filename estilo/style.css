@@ -112,7 +112,7 @@ header > p{/* Pata todos os (p) dentro de (header) estas serão as configuraçõ
     padding-right: 10px;
     padding-left: 10px;
 
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 
 
     text-shadow: 2px 2px 0px black; /* Sombra no Texto. Ordem Parâmetros : Deslocamento Horizontal, Deslocamento Vertical, Espalhamento e Cor da Sombra.*/
